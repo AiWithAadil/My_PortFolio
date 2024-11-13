@@ -24,9 +24,9 @@ const Hero = () => {
                                 <Typewriter
                                     options={{
                                         strings: [
-                                            "Python Programmer",
+                                            "Cloud Data Engineer",
                                             "Web Developer",
-                                            "SEO Expert",
+                                            "GenAi Learner",
                                         ],
                                         autoStart: true,
                                         loop: true,
@@ -39,7 +39,7 @@ const Hero = () => {
                             Welcome to my Portfolio! 🚀 I'm <span className="font-semibold text-sky-500">S.M. Aadil Ahmed</span>, a dynamic and driven individual with a unique blend of skills in Python programming, web development, SEO, and now venturing into the exciting world of <span className='font-semibold text-sky-500'>data engineering</span> 📊. Coming from a commerce background, my journey into the IT industry has been fueled by my insatiable curiosity and eagerness to learn 📚.
                         </p>
                         <div className="flex justify-center">
-                            <a href="/assets/cv/Syed Muhammad Adil Ahmed.pdf">
+                            <a href="/assets/cv/S.M Adil CV.pdf">
                                 <button className="inline-flex items-center text-black border-0 py-2 px-4 focus:outline-none ml-3 glows bg-gradient-to-r from-teal-400 to-blue-500 hover:from-blue-500 hover:bg-cyan-600 rounded text-lg animate-bounce">
                                     CV
                                     <FaCloudDownloadAlt className='text-xl ml-3 mt-0.5' />

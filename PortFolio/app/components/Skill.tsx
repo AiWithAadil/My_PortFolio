@@ -18,12 +18,17 @@ const skills: { [key: string]: Skill[] } = {
         { name: "JavaScript/Typescript" },
         { name: "Next.js" },
         { name: "Node.js" },
+        { name: "Tailwind" },
     ],
     dataEngineering: [
         { name: "SQL" },
         { name: "Big Data Processing" },
         { name: "ETL" },
         { name: "EDA" },
+        { name: "Kafka" },
+        { name: "Airflow" },
+        { name: "Docker" },
+        { name: "Linux" },
     ],
     Seo: [
         { name: "Keyword Research" },

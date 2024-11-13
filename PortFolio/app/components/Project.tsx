@@ -1,83 +1,138 @@
-"use client"
-import React from 'react'
+"use client";
+import React from 'react';
 import { MdArrowOutward } from "react-icons/md";
 
 const Project = () => {
+    const webDevelopmentProjects = [
+        {
+            id: 1,
+            title: "Portfolio Website",
+            description: "A personal resume builder showcasing My information and skills.",
+            imageUrl: "/assets/pictures/resume.jpg",
+            link: "https://github.com/AiWithAadil/Hackathon_Resume"
+        },
+        {
+            id: 2,
+            title: "Currency Converter",
+            description: "A React app that fetches the latest exchange rates and converts currencies.",
+            imageUrl: "/assets/project/currency.png",
+            link: "https://next-js-currency-converter.vercel.app/"
+        },
+        {
+            id: 3,
+            title: "Task Tracker",
+            description: "A atm machine app built with Typescript and integrated with local storage.",
+            imageUrl: "/assets/pictures/atm.jpg",
+            link: "https://github.com/AiWithAadil/Typescript_Projects/tree/main/ATM"
+        },
+    ];
+
+    const dataEngineeringProjects = [
+        {
+            id: 1,
+            title: "Stock_Market_RealTime_Project",
+            description: "This project involves simulating a real-time stock market application, where stock market data is ingested in real-time, processed using Apache Kafka, and stored in Amazon S3 for further analytics using AWS Glue and Amazon Athena.",
+            imageUrl: "/assets/pictures/de1.png",
+            link: "https://github.com/AiWithAadil/Stock_Market_RealTime_Project_DataEngineering"
+        },
+        {
+            id: 2,
+            title: "scd-in-snowflake-using-streams-tasks",
+            description: "This project demonstrates the implementation of Slowly Changing Dimensions (SCD) in Snowflake using Snowpipe.",
+            imageUrl: "/assets/pictures/de2.png",
+            link: "https://github.com/AiWithAadil/scd-in-snowflake-using-streams-tasks"
+        },
+        {
+            id: 3,
+            title: "Parallel_Processing_ETL_Pipeline",
+            description: "This project demonstrates the implementation of a parallel processing ETL (Extract, Transform, Load) pipeline using Apache Airflow. ",
+            imageUrl: "/assets/pictures/de3.png",
+            link: "https://github.com/AiWithAadil/Parallel_Processing_ETL_Pipeline"
+        }
+    ];
+
     return (
         <div id='Projects'>
-            <section className="text-gray-600 body-font">
-                <div className="container px-5 py-16 mx-auto">
-                    <div className="flex flex-col text-center w-full mb-12">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">My Projects</h1>
-                        <div className="w-20 h-0.5 bg-cyan-300 mb-6 mx-auto glow"></div>
+            <section className="text-gray-300 body-font bg-black">
+                <div className="container px-5 py-12 mx-auto">
+                    {/* Web Development Projects */}
+                   
+                    <div className="flex flex-col text-center w-full mb-8">
+                        <h2 className="text-xs text-blue-500 tracking-widest font-medium title-font mb-1">
+                            PROJECTS
+                        </h2>
+                        <h1 className="sm:text-2xl text-2xl font-bold title-font mb-4 text-blue-200">Web Development Projects</h1>
+                        <div className="glow mx-auto h-0.5 bg-cyan-300 mb-6 w-20"></div> {/* Add the glow class */}
                     </div>
-                    <div className="flex flex-wrap -m-4">
-                        <div className="lg:w-1/3 sm:w-1/2 p-2">
-                            <div className="flex relative glows rounded">
-                                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center rounded-lg" src="/assets/project/currency.png" />
-                                <div className="px-6 py-8 relative z-10 w-full border-4 border-gray-200 bg-black opacity-0 hover:opacity-100">
-                                    <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-                                    <h1 className="title-font text-lg font-medium text-white mb-3">Currency Converter</h1>
-                                    <p className="leading-relaxed text-sky-200">This React component allows users to input an amount, select currencies to convert between, fetch the latest exchange rate using an API, and display the converted amount. It manages user input and API interaction using state and event handlers.</p>
-                                    <a href="https://next-js-currency-converter.vercel.app/">
-                                        <button className='text-white text-lg'><u>view</u></button></a>
+                    <div className="flex flex-wrap justify-center -m-2">
+                        {webDevelopmentProjects.map((project) => (
+                            <div key={project.id} className="card bg-base-100 w-80 shadow-xl m-2">
+                                <figure>
+                                    <img
+                                        src={project.imageUrl}
+                                        alt={project.title}
+                                        className="object-cover w-full h-40 rounded-t-lg"
+                                    />
+                                </figure>
+                                <div className="card-body p-4">
+                                    <h2 className="card-title text-gray-400">{project.title}</h2>
+                                    <p className="text-gray-600">{project.description}</p>
+                                    <div className="card-actions justify-end">
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                            <button className="btn btn-primary">View Project</button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="lg:w-1/3 sm:w-1/2 p-2">
-                            <div className="flex relative glows rounded">
-
-                                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center rounded-lg" src="/assets/project/etl.avif" />
-                                <div className="px-6 py-8 relative z-10 w-full border-4 border-gray-200 bg-black opacity-0 hover:opacity-100">
-                                    <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-                                    <h1 className="title-font text-lg font-medium text-white mb-3">ETL Project</h1>
-                                    <p className="leading-relaxed text-sky-200">Project for Cloud Data Engineering Roadmap
-                                        Project 01: Acquiring and processing information on world's largest bank
-                                        Task 1: Logging function
-                                        Task 2: Extraction of data
-                                        Task 3: Transformation of data
-                                        Task 4: Loading to CSV
-                                        Task 5: Loading to Database
-                                        Task 6: Function to Run queries on Database
-                                        Task 7: Verify log entries.</p>
-                                    <a href="https://github.com/AiWithAadil/ETL-With-Python-S.M-Adil-">
-                                        <button className='text-white text-lg'><u>view</u></button></a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div className="lg:w-1/3 sm:w-1/2 p-2">
-                            <div className="flex relative glows rounded">
-                                <img alt="gallery" className="absolute inset-0 w-full h-full object-cover object-center rounded-lg" src="/assets/project/temperature-converter.webp" />
-                                <div className="px-6 py-8 relative z-10 w-full border-4 border-gray-200 bg-black opacity-0 hover:opacity-100">
-                                    <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-                                    <h1 className="title-font text-lg font-medium text-white mb-3">Temperature Converter</h1>
-                                    <p className="leading-relaxed text-sky-200">This program converts values between Celsius and Fahrenheit using functions to store values and a while loop to continuously run the code.</p>
-                                    <a href="https://github.com/AiWithAadil/Python_Projects_With_Senarios/blob/main/Senarios%20%26%20Codes/Temperature_converter.ipynb">
-                                        <button className='text-white text-lg'><u>view</u></button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
-                    <div className="flex justify-center mt-8">
-                        <a href="https://github.com/AiWithAadil?tab=repositories" className="relative inline-flex items-center justify-center leading-normal no-underline pb-1 text-white font-sans font-bold text-sm uppercase hover:text-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-500 transition group">
-                            Check Out More Projects
-                            <MdArrowOutward /><span className="absolute bottom-0 left-0 w-full h-0.5 bg-white origin-bottom transform transition duration-200 ease-out scale-x-0 group-hover:scale-x-100 group-hover:origin-bottom-left"></span>
+
+                    {/* Data Engineering Projects */}
+                    <div className="flex flex-col text-center w-full mt-16 mb-8">
+                        <h1 className="sm:text-2xl text-2xl font-bold title-font mb-4 text-blue-200">Data Engineering Projects</h1>
+                        <div className="glow mx-auto h-0.5 bg-cyan-300 mb-6 w-20"></div> {/* Add the glow class */}
+                    </div>
+                    <div className="flex flex-wrap justify-center -m-2">
+                        {dataEngineeringProjects.map((project) => (
+                            <div key={project.id} className="card bg-base-100 w-80 shadow-xl m-2">
+                                <figure>
+                                    <img
+                                        src={project.imageUrl}
+                                        alt={project.title}
+                                        className="object-cover w-full h-40 rounded-t-lg"
+                                    />
+                                </figure>
+                                <div className="card-body p-4">
+                                    <h2 className="card-title text-gray-400">{project.title}</h2>
+                                    <p className="text-gray-600">{project.description}</p>
+                                    <div className="card-actions justify-end">
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                            <button className="btn btn-primary">View Project</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* View More Projects Button */}
+                    <div className="flex justify-center mt-12">
+                        <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer">
+                            <button className="btn btn-secondary text-lg flex items-center gap-2">
+                                View All Projects on GitHub <MdArrowOutward />
+                            </button>
                         </a>
                     </div>
                 </div>
-            </section >
+            </section>
+
             <style jsx>{`
                 .glow {
-                    box-shadow: 0 0 10px rgba(0, 183, 255, 0.8), 0 0 20px rgba(0, 183, 255, 0.8), 0 0 30px rgba(0, 183, 255, 0.8), 0 0 40px rgba(0, 183, 255, 0.8), 0 0 50px rgba(0, 183, 255, 0.8), 0 0 60px rgba(0, 183, 255, 0.8);
-                }
-                .glows {
-                    box-shadow: 0 0 10px rgba(0, 183, 255, 0.8), 0 0 40px rgba(0, 183, 255, 0.8), 0 0 50px rgba(0, 183, 255, 0.8);
+                    box-shadow: 0 0 5px rgba(0, 183, 255, 0.8), 0 0 10px rgba(0, 183, 255, 0.8), 0 0 15px rgba(0, 183, 255, 0.8);
                 }
             `}</style>
-        </div >
-    )
-}
+        </div>
+    );
+};
 
-export default Project
+export default Project;
